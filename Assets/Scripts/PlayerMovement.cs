@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,8 +10,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Salto")]
     [SerializeField] private float JumpForce; // Fuerza de salto
     private Rigidbody rb; // Rigidbody
-    
-     void Start()
+    [SerializeField] private bool isGrounded = true; // Esta en el suelo
+
+    void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
@@ -30,9 +32,26 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(mover, Space.Self); // Se mueve en el eje local (Space.Self)
 
         // --- SALTO ---
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
+        }
+    }
+
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground")) // Detecta el suelo
+        {
+            isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision) // Detecta el suelo
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
         }
     }
 }
