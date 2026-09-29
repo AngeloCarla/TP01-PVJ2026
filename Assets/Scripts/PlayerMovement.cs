@@ -6,12 +6,13 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movimiento")]
     [SerializeField] private float walkSpeed; // Velocidad al caminar
     private Vector3 dir = Vector3.zero; // Direccion. Comienza en 0
-    public Vector3 externalMoveSpeed; // Velocidad externa
+    private Vector3 externalMoveSpeed; // Velocidad externa
 
     [Header("Salto")]
     [SerializeField] private float JumpForce; // Fuerza de salto
     private Rigidbody rb; // Rigidbody
     [SerializeField] private bool isGrounded = true; // Esta en el suelo
+    private Vector3 externalMoveSpeed1;
 
     void Start()
     {
@@ -55,4 +56,6 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
         }
     }
+
+    public Vector3 ExternalMoveSpeed { get => externalMoveSpeed; set => externalMoveSpeed = value; }
 }

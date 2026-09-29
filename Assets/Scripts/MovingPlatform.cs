@@ -9,7 +9,7 @@ public class MovingPlatform : MonoBehaviour
     [Header("Movimiento")]
     [SerializeField] private float speed; // Velocidad
     [SerializeField] private float waitTime; // Tiempo de espera
-    [SerializeField] private bool waiting; // Esperando
+    private bool waiting; // Esperando
     private Vector3 currentTarget; // Punto al que se dirige la plataforma (Objetivo)
     private Vector3 dir; // Direccion en la que se mueve
     private float proximityThreshold = 0.2f; // Proximidad al punto al que quiere llegar
@@ -23,16 +23,14 @@ public class MovingPlatform : MonoBehaviour
         currentTarget = pointB.position; // Primer Destino
     }
 
-    void LateUpdate()
+    void Update()
     {
         float distanceToTarget = Vector3.Distance(transform.position, currentTarget); // Distancia entre la plataforma y el punto al que quiere llegar
 
         if (distanceToTarget < proximityThreshold && !waiting)
         {
             transform.position = currentTarget;
-
             waiting = true;
-
             Invoke("ChangeDirection", waitTime); // Espera para volver al objetivo
         }
 
@@ -47,7 +45,8 @@ public class MovingPlatform : MonoBehaviour
             PlayerMovement player = other.GetComponent<PlayerMovement>();
             if (player != null)
             {
-                player.externalMoveSpeed = dir * speed; // Suma la velocidad externa
+                gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                player.ExternalMoveSpeed = dir * speed; // Suma la velocidad externa
             }
         }
     }
@@ -59,7 +58,8 @@ public class MovingPlatform : MonoBehaviour
             PlayerMovement player = other.GetComponent<PlayerMovement>();
             if (player != null)
             {
-                player.externalMoveSpeed = Vector3.zero; // Velocidad externa 0
+                gameObject.GetComponent<Renderer>().material.color = Color.white;
+                player.ExternalMoveSpeed = Vector3.zero; // Velocidad externa 0
             }
         }
     }
