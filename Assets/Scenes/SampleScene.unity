@@ -580,7 +580,7 @@ Transform:
   m_GameObject: {fileID: 90112393}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.59, y: 1, z: 5.47088}
+  m_LocalPosition: {x: -3.59, y: 1, z: 155}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1552,6 +1552,7 @@ GameObject:
   - component: {fileID: 338318808}
   - component: {fileID: 338318807}
   - component: {fileID: 338318806}
+  - component: {fileID: 338318810}
   m_Layer: 0
   m_Name: GoalZone
   m_TagString: Untagged
@@ -1574,7 +1575,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1655,6 +1656,19 @@ Transform:
   - {fileID: 650947666}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &338318810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338318805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec1d9f2bbf91af4585798d507a6bbaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoalZone
+  goal: {fileID: 650947666}
 --- !u!1 &339066755
 GameObject:
   m_ObjectHideFlags: 0
@@ -4602,7 +4616,7 @@ Transform:
   m_GameObject: {fileID: 1276079596}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 5}
+  m_LocalPosition: {x: 0, y: 0.5, z: 155}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
