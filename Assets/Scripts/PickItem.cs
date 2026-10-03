@@ -27,8 +27,8 @@ public class PickItem : MonoBehaviour
 
     public GameObject DropItem()
     {
-        GameObject temp = currentItem;
-        currentItem = null;
-        return temp;
+        GameObject temp = currentItem; // Guarda temporalmente el item actual
+        currentItem = null; // Deja de llevar el objeto
+        return temp; // Devuelve el item
     }
 }
