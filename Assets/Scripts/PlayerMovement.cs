@@ -13,11 +13,11 @@ public class PlayerMovement : MonoBehaviour
     [Header("Salto")]
     [SerializeField] private float JumpForce; // Fuerza de salto
     private Rigidbody rb; // Rigidbody
-    [SerializeField] private bool isGrounded; // Esta en el suelo
+    [SerializeField] private bool isGrounded = false; // Esta en el suelo
 
     [Header("Doble Salto")]
     [SerializeField] private int maxJumps = 1; // Maximo de saltos
-    private float doubleJumpTime = 10f; // Tiempo de PowerUp
+    private float doubleJumpTime = 15f; // Tiempo de PowerUp
     private int jumpCount = 0; // Contador de saltos
     private bool doubleJumpActive = false; // PowerUp Activo
 
@@ -70,13 +70,13 @@ public class PlayerMovement : MonoBehaviour
     {
         doubleJumpActive = true;
         maxJumps = 2; // Doble salto
-        Debug.Log($"<color=cyan>Doble Salto ACTIVADO</color>");
+        Debug.Log($"<color=cyan>Doble Salto </color><color=green>ACTIVADO</color>");
 
         yield return new WaitForSeconds(doubleJumpTime);
 
         doubleJumpActive = false;
         maxJumps = 1;
-        Debug.Log($"<color=red>Doble Salto DESACTIVADO</color>");
+        Debug.Log($"<color=cyan>Doble Salto </color><color=red>DESACTIVADO</color>");
     }
 
     public void EnableDoubleJump()

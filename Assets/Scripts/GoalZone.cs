@@ -1,8 +1,11 @@
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class GoalZone : MonoBehaviour
 {
     [SerializeField] private Transform goal; // Zona de entrega
+    [SerializeField] private ParticleSystem particles; // Particulas
+
     private bool completed = false; // Desafio completo
 
     private void OnTriggerStay(Collider other)
@@ -17,12 +20,13 @@ public class GoalZone : MonoBehaviour
                 if (item != null)
                 {
                     ItemInZone(item); // Coloca al item en la zona de entrega
-                    Debug.Log($"<color=green>Felicidades GANASTE!</color>");
+                    Debug.Log($"<color=magenta>El Objeto esta en su lugar!</color>");
                     completed = true;
+                    particles.Play();
                 }
                 else
                 {
-                    Debug.Log($"<color=red>Falta el item</color>");
+                    Debug.Log($"<color=red>Falta el Objeto</color>");
                 }
             }
         }

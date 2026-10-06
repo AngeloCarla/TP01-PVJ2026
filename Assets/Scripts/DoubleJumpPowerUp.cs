@@ -11,7 +11,7 @@ public class DoubleJumpPowerUp : MonoBehaviour
             {
                 player.EnableDoubleJump(); // Activa el doble salto
 
-                GetComponent<MeshRenderer>().enabled = false; // "Desaparece"
+                GetComponent<MeshRenderer>().enabled = false;
                 GetComponent<Collider>().enabled = false;
             }
         }
