@@ -7,15 +7,15 @@ LU: TUV000563
 Equipo Docente: Mg. Ing. Ariel Alejandro Vega | Tecn. Kevin Alexis Roman Llampa
 
 ___
-## 🛠️ Versión de Unity
+## 🛠️ Version de Unity
 
-> Unity: Unity 6
+> Unity: Unity 6.3 LTS
 Proyecto: 3D
 Lenguaje: C#
 ___
 
 ## 🎮 Descripcion del Proyecto
-Juego de plataformas 3D en el que el jugador debe completar un recorrido de parkour de 2 fases hasta llegar a la meta. Superar plataformas, esquivar obstaculos, entregar un objeto y obtener la Victoria
+Juego de plataformas 3D en el que el jugador debe completar un recorrido de parkour de 2 niveles hasta llegar a la meta. Superar plataformas, esquivar obstaculos, entregar un objeto y obtener la Victoria
 ___
 ## 🕹️ Controles del Jugador
 | Accion | Tecla/Boton | Descripcion|
@@ -25,8 +25,8 @@ ___
 | **Interactuar** | `E` / Contacto con zona (`Trigger`) | Recolectar el objeto clave o activar Power-Up |
 
 ___
-## ⚙️ Mecánicas
-- **Plataformas móviles**
+## ⚙️ Mecanicas
+- **Plataformas moviles**
 
 El Juego contiene plataformas que se desplazan de punto A hacia punto B. El movimiento es continuo y se utiliza ```Invoke()``` para temporizar el cambio de direccion
 
@@ -34,19 +34,19 @@ El Juego contiene plataformas que se desplazan de punto A hacia punto B. El movi
 El escenario cuenta con un generador de proyectiles (```BulletSpawner```) que utiliza ```InvokeRepeating()``` para instanciar balas que chocan con el jugador. Se destruyen despues de un tiempo para evitar una acumulacion de objetos
 
 - **Recoleccion**
-El jugador puede recoger un objeto presionando E. Al recogerlo el jugador se emparenta mediante ```SetParent()``` permiento transportarlo durante el recorrido. Al toca la zona de entrega, se elimina el emparentamiento y el objeto vuelve a ser independiente
+El jugador puede recoger un objeto presionando E. Al recogerlo el jugador se emparenta mediante ```SetParent()``` permiento transportarlo durante el recorrido. Al llegar a la zona de entrega, el objeto deja de ser transportado por el jugador y pasa a formar parte de la zona de entrega
 
 - **PowerUp: Doble Salto**
-Durante el recorrido se encuentra un Power-Up, una esfera verde. Al tomarlo, el jugador obtiene el doble salto (Precionando por segunda vez el espacio) por un tiempo limitado. El efecto dura 15 segundo y se implementa mediante una corrutina ```DoubleJump()```. Al finalizar el tiempo, vuelve a su estado original
+Durante el recorrido se encuentra un PowerUp, una esfera verde. Al tomarlo, el jugador obtiene el doble salto (Precionando por segunda vez el espacio) por un tiempo limitado. El efecto dura 15 segundo y se implementa mediante una corrutina ```DoubleJump()```. Al finalizar el tiempo, vuelve a su estado original
 
 - **Niveles**
 El juego esat dividido en dos niveles. En el primer nivel se debe superar plataformas y esquivar balas. En el segundo nivel aumenta la dificultad y se agrega el objeto a entregar. Al cumplir el objetivo gana el juego
 
 - **Victoria**
-Al completar el objetivo, se muestra un mensaje de victoria y se activan efectos visuales de partículas
+Al completar el objetivo, se muestra un mensaje de victoria y se activan efectos visuales de particulas
 ___
 
-## 📝 Explicación Técnica de Codigo:
+## 📝 Explicacion Tecnica de Codigo:
 1. ### Escenario y control del personaje
 Script principal: ```PlayerMovement.cs```
 Funcionamiento: El script controla el movimiento y el salto del personaje mediante el teclado y utiliza un Rigidbody para aplicar la fuerza de salto
@@ -71,7 +71,7 @@ Funcionamiento: El script controla el movimiento y el salto del personaje median
  }
 ```
 
-2. ### Plataforma móvil e ```Invoke()```
+2. ### Plataforma movil e ```Invoke()```
 Script principal: ```MovingPlatform.cs```
 Funcionamiento: El Script mueve las plataformas de Punto A a Punto B y se utiliza ```Invoke()``` para temporizar el cambio de direccion
 
@@ -98,7 +98,7 @@ Funcionamiento: El Script mueve las plataformas de Punto A a Punto B y se utiliz
    }
 ```
 
-3. ### Generador de obstáculos e ```InvokeRepeating()```
+3. ### Generador de obstaculos e ```InvokeRepeating()```
 Script principal: ```BulletSpawner.cs```
 Funcionamiento: El Script genera balas mediante ```InvokeRepeating()```
 
@@ -115,7 +115,7 @@ Funcionamiento: El Script genera balas mediante ```InvokeRepeating()```
    }
 ```
 
-4. ### Recolección y transporte mediante ```SetParent()```
+4. ### Recoleccion y transporte mediante ```SetParent()```
 Script principal: ```PickItem.cs```
 Funcionamiento: Se utiliza para recoger el objeto y emparejarlo
 
@@ -243,10 +243,23 @@ Funcionamiento: El ```GoalZone.cs``` se utiliza para la entrega del objeto y act
 ___
 
 ## 📸 Capturas de Pantalla
+### Nivel 1
+![Inicio]("Images/1.png")
+![Plataformas]("Images/2.png")
+
+### Nivel 2
+![Objeto a Recoger]("Images/3.png")
+![Obstaculos]("Images/4.png")
+![PoweUp]("Images/5.png")
+![Entrega]("Images/8.png")
+
+### Victoria
+![Camino Final]("Images/9.png")
+![Vistoria]("Images/10.png")
 
 ___
 ## Bibliografia
 - [Markdown](https://markdown.es)
 - [Plataformas moviles](https://www.youtube.com/watch?v=AoLR6pMkkZQ) Youtube
-- Material de clase — Programación de Videojuegos I
-- Apuntes y ejemplos proporcionados durante las clases de Programación de Videojuegos I
+- Material de clase — Programacion de Videojuegos I
+- Apuntes y ejemplos proporcionados durante las clases de Programacion de Videojuegos I
