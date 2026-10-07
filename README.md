@@ -258,7 +258,7 @@ ___
 ![Vistoria](Images/10.png)
 
 ___
-## Bibliografia
+## 📚 Bibliografia
 - [Markdown](https://markdown.es)
 - [Plataformas moviles](https://www.youtube.com/watch?v=AoLR6pMkkZQ) Youtube
 - Material de clase — Programacion de Videojuegos I
