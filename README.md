@@ -244,18 +244,18 @@ ___
 
 ## 📸 Capturas de Pantalla
 ### Nivel 1
-![Inicio]("Images/1.png")
-![Plataformas]("Images/2.png")
+![Inicio](Images/1.png)
+![Plataformas](Images/2.png)
 
 ### Nivel 2
-![Objeto a Recoger]("Images/3.png")
-![Obstaculos]("Images/4.png")
-![PoweUp]("Images/5.png")
-![Entrega]("Images/8.png")
+![Objeto a Recoger](Images/3.png)
+![Obstaculos](Images/4.png)
+![PoweUp](Images/5.png)
+![Entrega](Images/8.png)
 
 ### Victoria
-![Camino Final]("Images/9.png")
-![Vistoria]("Images/10.png")
+![Camino Final](Images/9.png)
+![Vistoria](Images/10.png)
 
 ___
 ## Bibliografia
