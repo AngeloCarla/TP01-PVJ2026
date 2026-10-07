@@ -13,7 +13,8 @@ public class WinBehavior : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("<color=green>GANASTE!!! Felicidades, lograste sobrevivir</color>");
+            Debug.Log("<color=yellow>GANASTE!!! Felicidades, lograste sobrevivir</color>");
+            GetComponent<Renderer>().material.color = Color.yellow; // Cambia el color a verde
             confetiL.Play();
             confetiR.Play();
         }
