@@ -258,8 +258,19 @@ ___
 ![Vistoria](Images/10.png)
 
 ___
+
+## ▶️ Como abrir y ejecutar el proyecto
+
+1. Descargar o clonar el repositorio desde GitHub.
+2. Abrir Unity Hub.
+3. Seleccionar **Add project from disk** y elegir la carpeta del proyecto
+4. Abrir el proyecto utilizando **Unity 6.3 LTS**
+5. Abrir la escena principal ubicada en `Assets/Scenes/`
+6. Presionar **Play** para ejecutar el juego
+7. Utilizar los controles indicados en la seccion **Controles del Jugador**
+___
 ## 📚 Bibliografia
-- [Markdown](https://markdown.es)
-- [Plataformas moviles](https://www.youtube.com/watch?v=AoLR6pMkkZQ) Youtube
-- Material de clase — Programacion de Videojuegos I
-- Apuntes y ejemplos proporcionados durante las clases de Programacion de Videojuegos I
+- [README.md - Markdown](https://markdown.es)
+- [Plataformas moviles - Youtube](https://www.youtube.com/watch?v=AoLR6pMkkZQ)
+- [Material de clase — Programacion de Videojuegos I](https://virtual.unju.edu.ar/course/view.php?id=2520)
+- Apuntes y ejemplos dados durante las clases de Programacion de Videojuegos I
